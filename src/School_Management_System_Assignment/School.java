@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class School {
 private ArrayList<Teacher> teachers;
 private ArrayList<Student> students;
-private double totalMoneyEarned;
-private double totalMoneySpent;
+private static double totalMoneyEarned;
+private static double totalMoneySpent;
 
     public School(ArrayList<Teacher> teachers, ArrayList<Student> students) {
         this.teachers = teachers;
         this.students = students;
-        this.totalMoneyEarned = 0;
-        this.totalMoneySpent = 0;
+        totalMoneyEarned = 0;
+        totalMoneySpent = 0;
     }
 
     public ArrayList<Teacher> getTeachers() {
@@ -35,15 +35,16 @@ private double totalMoneySpent;
         return totalMoneyEarned;
     }
 
-    public void setTotalMoneyEarned(double totalMoneyEarned) {
-        this.totalMoneyEarned = totalMoneyEarned;
+    public static void updateTotalMoneyEarned(double moneyEarned) {
+        totalMoneyEarned += moneyEarned;
     }
 
     public double getTotalMoneySpent() {
         return totalMoneySpent;
     }
 
-    public void updateTotalMoneySpent(double totalMoneySpent) {
-        this.totalMoneySpent = totalMoneySpent;
+    public static void updateTotalMoneySpent(double moneySpent) {
+        totalMoneyEarned -=  moneySpent;
     }
+
 }

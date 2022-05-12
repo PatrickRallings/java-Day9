@@ -4,10 +4,13 @@ public class Teacher {
     private int id;
     private String name;
     private double salary;
+    private double salaryEarned;
 
-    public Teacher(int id, String name){
+    public Teacher(int id, String name, double salary){
         this.id = id;
         this.name = name;
+        this.salary = salary;
+        this.salaryEarned = 0;
     }
     public int getID(){
         return this.id;
@@ -20,5 +23,18 @@ public class Teacher {
     }
     public void setSalary(double salary){
         this.salary = salary;
+    }
+    public void receiveSalary(double salary){
+        this.salaryEarned += salary;
+        School.updateTotalMoneySpent(salary);
+    }
+
+    @Override
+    public String toString() {
+        return
+                "Teacher's ID: " + id +
+                "\nName: " + name +
+                "\nSalary: " + salary +
+                "\nSalary Earned: " + salaryEarned;
     }
 }
