@@ -1,6 +1,6 @@
 package Objects_As_Parameters_Assignment;
 
-public class Main {
+public class BoxMain {
     public static void main(String[] args){
 
         Box b1 = new Box(10,20);

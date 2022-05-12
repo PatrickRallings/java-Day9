@@ -5,7 +5,7 @@ public class Box {
 
     Box(int w, int h){
         this.width = w;
-        this.height = w;
+        this.height = h;
     }
 
     Box(Box b){
@@ -14,10 +14,7 @@ public class Box {
     }
 
     boolean isEqual(Box b){
-        if(this.width == b.width && this.height == b.height)
-            return true;
-        else
-            return true;
+        return this.width == b.width && this.height == b.height;
     }
 
     Box duplicate(){
